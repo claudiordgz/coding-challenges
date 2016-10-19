@@ -2,10 +2,21 @@ from fixture import get_testcase, read_raw
 
 
 def contains(hash_table, ransom):
-    return all(word in hash_table for word in ransom)
+    for word in ransom:
+        if word in hash_table and hash_table[word] > 0:
+            hash_table[word] -= 1
+        else:
+            return False
+    return True
+
 
 def ransom_note(magazine, ransom):
-    hash_table = {key: True for key in magazine}
+    hash_table = {}
+    for key in magazine:
+        if key not in hash_table:
+            hash_table[key] = 1
+        else:
+            hash_table[key] += 1
     return contains(hash_table, ransom)
 
 
@@ -25,7 +36,6 @@ def main_hr():
         print("Yes")
     else:
         print("No")
-
 
 
 def main():
