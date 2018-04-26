@@ -59,10 +59,6 @@ def solution(data):
 
 
 
-def main():
-    for t in '012345':
-        i, o = get_testcase(t, read_as=read_raw)
-        print(solution(i) == o[0])
-
-if __name__ == '__main__':
-    main()
+for t in '012345':
+    i, o = get_testcase(t, read_as=read_raw)
+    print(solution(i) == o[0])

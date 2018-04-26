@@ -17,7 +17,7 @@ def read_raw(filename):
 
 
 def get_testcase(test_number, read_as=read_file, folder_name='testcases'):
-    i = cwd + '/{folder_name}/i{number}.txt'.format(folder_name=folder_name, number=test_number)
-    o = cwd + '/{folder_name}/o{number}.txt'.format(folder_name=folder_name, number=test_number)
+    i = cwd + '../{folder_name}/i{number}.txt'.format(folder_name=folder_name, number=test_number)
+    o = cwd + '../{folder_name}/o{number}.txt'.format(folder_name=folder_name, number=test_number)
     return read_as(i), read_as(o)
 
